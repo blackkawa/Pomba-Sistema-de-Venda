@@ -8,7 +8,7 @@ Sistema de vendas simples baseado em texto
 
 Funções adicionadas:
 --------------------------------------------------------------------
-->Grava registros em formato de arquivos de texto
+Grava registros em formato de arquivos de texto
  -nome de cada arquivo possui o nome do registro e o código interno
  Ex: joao - 01234
     bolacha - 4125(código serial)
@@ -21,13 +21,12 @@ Funções adicionadas:
     Bolacha
     -código interno
     -validade
-->Função de busca de registros já gravados
-->função de venda baseada nos registros já inseridos
+Função de busca de registros já gravados
+função de venda baseada nos registros já inseridos
 ->Função de conta para cada pessoa registrada
 ---------------------------------------------------------------------
 Funções Pretendidas:
-->Alterar Cadastros corretamente
-->Permitir adicionar valores de compra a um cadastro de usuario
-->Adicionar sistema de login
+Alterar Cadastros corretamente
+Permitir adicionar valores de compra a um cadastro de usuario
+Adicionar sistema de login
 ---------------------------------------------------------------------
-*/
