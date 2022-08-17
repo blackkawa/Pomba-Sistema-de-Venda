@@ -3,7 +3,7 @@ Sistema de vendas simples baseado em texto
 
 Versão 0.6
 
-->Sistema baseado em texto
+->Sistema baseado em texto, feito inteiramente em C.
 
 ->Funções adicionadas:
 
