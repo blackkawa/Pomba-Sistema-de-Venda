@@ -1,0 +1,28 @@
+Itikawa Sistemas de venda
+
+--------------------------------------------------------------------
+
+			Versão 1.0
+
+->Sistema baseado em texto
+
+->Grava registros em formato de arquivos de texto
+ -nome de cada arquivo possui o nome do registro e o código interno
+ Ex: joao - 01234
+    bolacha - 4125(código serial)
+ -internamente registra informações sobre o registro
+ Ex: joao
+    -Sobrenome
+    -Idade
+
+    Bolacha
+    -código interno
+    -validade
+
+->Função de busca de registros já gravados
+
+->função de venda baseada nos registros já inseridos
+
+->Função de conta para cada pessoa registrada
+
+---------------------------------------------------------------------

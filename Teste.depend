@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1660666863 source:d:\arquivos usuarios\documents\projetos\teste\main.c
+	<stdio.h>
+	<stdlib.h>
+	"FuncaoCadastro.h"
+	"FuncaoCaixa.h"
+	<locale.h>
+	<string.h>
+
+1660745005 d:\arquivos usuarios\documents\projetos\teste\funcaocadastro.h
+	<string.h>
+	<dirent.h>
+
+1658335208 source:d:\arquivos usuarios\documents\projetos\teste\funcaocadastro.c
+
+1658334438 source:d:\arquivos usuarios\documents\projetos\teste\funcaocaixa.c
+
+1658335208 d:\arquivos usuarios\documents\projetos\teste\funcaocadastro.c
+
+1658334438 d:\arquivos usuarios\documents\projetos\teste\funcaocaixa.c
+
+1660744980 d:\arquivos usuarios\documents\projetos\teste\funcaocaixa.h
+
