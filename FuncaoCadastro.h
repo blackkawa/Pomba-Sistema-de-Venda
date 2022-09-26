@@ -4,6 +4,15 @@
 #include <string.h>
 #include <dirent.h>
 
+#define LINHA_NOME 25
+#define LINHA_IDADE 65
+#define LINHA_CPF 103
+#define LINHA_TELEFONE 86
+#define LINHA_NOMEPRODUTO 19
+#define LINHA_BARCODE 82
+#define LINHA_VALIDADE 91
+
+
 void NovoCadastro();
 void BuscaCadastro();
 void AlterarCadastro();
@@ -65,7 +74,7 @@ void NovoCadastro()
     FILE *ponteiro_arquivo;
     //-----------------------------
     //Dados de cadastro de cliente
-    char nome[30];
+    char nome[10];
     int idade=0;
     char telefone[11];
     char CPF[12];
@@ -73,7 +82,7 @@ void NovoCadastro()
     //-----------------------------
     //-----------------------------
     //Dados de cadastro de Produto
-    char nomeproduto[30];
+    char nomeproduto[10];
     int barcode;
     char validade[10];
     float preco;
@@ -181,22 +190,32 @@ void AlterarCadastro()
     char busca[30];
     strcpy(busca, "\0");
     char leitura2[50];
+    strcpy(leitura2, "\0");
     char buffer[300];
     strcpy(buffer, "\0");
     FILE *ponteiro_arquivo;
+    FILE *escrita_arquivo;
+    char leituranome[63];
     //-----------------------------
     //Dados de cadastro de cliente
-    char nome[30];
-    int idade=0;
+    char nome[10];
+    strcpy(nome, "\0");
+    char idade[3];
+    strcpy(idade, "\0");
     char telefone[11];
+    strcpy(telefone, "\0");
     char CPF[12];
-    int escolha;
+    strcpy(CPF, "\0");
+    int escolha=0;
     //-----------------------------
     //-----------------------------
     //Dados de cadastro de Produto
-    char nomeproduto[30];
-    int barcode;
+    char nomeproduto[10];
+    strcpy(nomeproduto, "\0");
+    char barcode[10];
+    strcpy(barcode, "\0");
     char validade[10];
+    strcpy(validade, "\0");
     //-----------------------------
 
     printf("Qual cadastro você deseja ALTERAR?: ");
@@ -220,11 +239,12 @@ void AlterarCadastro()
     while(escolha<5)
     {
         //faz a leitura de uma linha do arquivo
-        fgets(leitura2, 40, ponteiro_arquivo);
+        fgets(leitura2, 50, ponteiro_arquivo);
         //insere a linha no buffer, pois quando escrevemos em um arquivo o apagamos. o buffer serve para nao perdermos os dados
         strcat(buffer, leitura2);
         escolha++;
     }
+
 
     //imprime o buffer adquirido do loop
     printf("%s", buffer);
@@ -250,38 +270,256 @@ void AlterarCadastro()
     {
     case 1:
         printf("Insira o novo nome: ");
-        fgets(nome, 30, stdin);
+        fgets(nome, 10, stdin);
         fflush(stdin);
+
+        //copia a primeira parte do buffer para o leituranome, até o campo nome:
+        strncpy(leituranome, buffer, LINHA_NOME);
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", leituranome);
+        printf("\n----------------------------------------------------------\n");
+
+        //concatena o nome no buffer
+        strcat(leituranome, nome);
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", leituranome);
+        printf("\n----------------------------------------------------------\n");
+
+        //adiciona o nome novo no buffer
+        memcpy(buffer, leituranome, LINHA_NOME+strlen(nome));
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", buffer);
+        printf("\n----------------------------------------------------------\n");
+
+        //escreve o buffer no arquivo
+        //------------------------------------------
+        escrita_arquivo = fopen(busca, "w");
+
+        fprintf(escrita_arquivo, "%s", buffer);
+
+        fclose(escrita_arquivo);
+        //-------------------------------------------
+        printf("O arquivo foi alterado com sucesso!!!!\n");
+
         break;
     case 2:
         printf("Insira a nova idade: ");
-        scanf("%i", &idade);
+        fgets(idade, 3, stdin);
         fflush(stdin);
+
+        //copia a primeira parte do buffer para o leitura 2, até o campo nome:
+        strncpy(leituranome, buffer, LINHA_IDADE);
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", leituranome);
+        printf("\n----------------------------------------------------------\n");
+
+        //concatena o nome no buffer
+        strcat(leituranome, idade);
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", leituranome);
+        printf("\n----------------------------------------------------------\n");
+
+        //adiciona o nome novo no buffer
+        memcpy(buffer, leituranome, LINHA_IDADE+strlen(idade));
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", buffer);
+        printf("\n----------------------------------------------------------\n");
+
+        //escreve o buffer no arquivo
+        //------------------------------------------
+        escrita_arquivo = fopen(busca, "w");
+
+        fprintf(escrita_arquivo, "%s", buffer);
+
+        fclose(escrita_arquivo);
+        //-------------------------------------------
+        printf("O arquivo foi alterado com sucesso!!!!\n");
         break;
     case 3:
         printf("Insira o novo telefone: ");
         fgets(telefone, 30, stdin);
         fflush(stdin);
+
+        //copia a primeira parte do buffer para o leitura 2, até o campo nome:
+        strncpy(leituranome, buffer, LINHA_TELEFONE);
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", leituranome);
+        printf("\n----------------------------------------------------------\n");
+
+        //concatena o nome no buffer
+        strcat(leituranome, telefone);
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", leituranome);
+        printf("\n----------------------------------------------------------\n");
+
+        //adiciona o nome novo no buffer
+        memcpy(buffer, leituranome, LINHA_TELEFONE+strlen(telefone));
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", buffer);
+        printf("\n----------------------------------------------------------\n");
+
+        //escreve o buffer no arquivo
+        //------------------------------------------
+        escrita_arquivo = fopen(busca, "w");
+
+        fprintf(escrita_arquivo, "%s", buffer);
+
+        fclose(escrita_arquivo);
+        //-------------------------------------------
+        printf("O arquivo foi alterado com sucesso!!!!\n");
         break;
     case 4:
         printf("Insira o novo CPF: ");
         fgets(CPF, 30, stdin);
         fflush(stdin);
+
+        //copia a primeira parte do buffer para o leitura 2, até o campo nome:
+        strncpy(leituranome, buffer, LINHA_CPF);
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", leituranome);
+        printf("\n----------------------------------------------------------\n");
+
+        //concatena o nome no buffer
+        strcat(leituranome, CPF);
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", leituranome);
+        printf("\n----------------------------------------------------------\n");
+
+        //adiciona o nome novo no buffer
+        memcpy(buffer, leituranome, LINHA_CPF+strlen(nome));
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", buffer);
+        printf("\n----------------------------------------------------------\n");
+
+        //escreve o buffer no arquivo
+        //------------------------------------------
+        escrita_arquivo = fopen(busca, "w");
+
+        fprintf(escrita_arquivo, "%s", buffer);
+
+        fclose(escrita_arquivo);
+        //-------------------------------------------
+        printf("O arquivo foi alterado com sucesso!!!!\n");
         break;
     case 5:
         printf("Insira o novo nome do produto: ");
         fgets(nomeproduto, 30, stdin);
         fflush(stdin);
+
+        //copia a primeira parte do buffer para o leitura 2, até o campo nome:
+        strncpy(leituranome, buffer, LINHA_NOMEPRODUTO);
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", leituranome);
+        printf("\n----------------------------------------------------------\n");
+
+        //concatena o nome no buffer
+        strcat(leituranome, nomeproduto);
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", leituranome);
+        printf("\n----------------------------------------------------------\n");
+
+        //adiciona o nome novo no buffer
+        memcpy(buffer, leituranome, LINHA_NOMEPRODUTO+strlen(nome));
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", buffer);
+        printf("\n----------------------------------------------------------\n");
+
+        //escreve o buffer no arquivo
+        //------------------------------------------
+        escrita_arquivo = fopen(busca, "w");
+
+        fprintf(escrita_arquivo, "%s", buffer);
+
+        fclose(escrita_arquivo);
+        //-------------------------------------------
+        printf("O arquivo foi alterado com sucesso!!!!\n");
         break;
     case 6:
         printf("Insira o novo barcode: ");
-        scanf("%i", &barcode);
+        fgets(barcode, 10, stdin);
         fflush(stdin);
+
+        //copia a primeira parte do buffer para o leitura 2, até o campo nome:
+        strncpy(leituranome, buffer, LINHA_BARCODE);
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", leituranome);
+        printf("\n----------------------------------------------------------\n");
+
+        //concatena o nome no buffer
+        strcat(leituranome, barcode);
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", leituranome);
+        printf("\n----------------------------------------------------------\n");
+
+        //adiciona o nome novo no buffer
+        memcpy(buffer, leituranome, LINHA_BARCODE+strlen(nome));
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", buffer);
+        printf("\n----------------------------------------------------------\n");
+
+        //escreve o buffer no arquivo
+        //------------------------------------------
+        escrita_arquivo = fopen(busca, "w");
+
+        fprintf(escrita_arquivo, "%s", buffer);
+
+        fclose(escrita_arquivo);
+        //-------------------------------------------
+        printf("O arquivo foi alterado com sucesso!!!!\n");
         break;
     case 7:
         printf("Insira a nova validade: ");
         fgets(validade, 30, stdin);
         fflush(stdin);
+
+        //copia a primeira parte do buffer para o leitura 2, até o campo nome:
+        strncpy(leituranome, buffer, LINHA_VALIDADE);
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", leituranome);
+        printf("\n----------------------------------------------------------\n");
+
+        //concatena o nome no buffer
+        strcat(leituranome, validade);
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", leituranome);
+        printf("\n----------------------------------------------------------\n");
+
+        //adiciona o nome novo no buffer
+        memcpy(buffer, leituranome, LINHA_VALIDADE+strlen(nome));
+
+        printf("\n----------------------------------------------------------\n");
+        printf("%s\n", buffer);
+        printf("\n----------------------------------------------------------\n");
+
+        //escreve o buffer no arquivo
+        //------------------------------------------
+        escrita_arquivo = fopen(busca, "w");
+
+        fprintf(escrita_arquivo, "%s", buffer);
+
+        fclose(escrita_arquivo);
+        //-------------------------------------------
+        printf("O arquivo foi alterado com sucesso!!!!\n");
         break;
     }
 
