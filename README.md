@@ -1,7 +1,7 @@
 # Pomba-Sistema-de-Venda
 Sistema de vendas simples baseado em texto
 
-Versão 0.6
+Versão 0.7
 
 ->Sistema baseado em texto, feito inteiramente em C.
 
@@ -23,8 +23,6 @@ função de venda baseada nos registros já inseridos
 Função de conta para cada pessoa registrada
 
 ->Funções Pretendidas:
-
-Alterar Cadastros corretamente;
 
 Permitir adicionar valores de compra a um cadastro de usuario;
 
