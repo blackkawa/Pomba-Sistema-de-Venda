@@ -1,31 +1,27 @@
-# Pomba-Sistema-de-Venda
-Sistema de vendas simples baseado em texto
+# Pomba-Sistema-de-Venda (revised!)
+Sistema de vendas simples, baseado na interface gráfica GTK3
 
-Versão 0.7
+/--------------------------------------------------------------------------------
 
-->Sistema baseado em texto, feito inteiramente em C.
+Versão 0.1
 
-->Funções adicionadas:
+Funções a Adicionar:
+Login
+Cadastro de produtos
+Manuseio de Cadastros
+Tela de Vendas
 
-Grava registros em formato de arquivos de texto
-nome de cada arquivo possui o nome do registro e o código interno: joao - 01234, bolacha - 4125 e internamente registra informações sobre o registro
- 
-    nome joao
-    Idade 17
-    CPF 012.226.152-25
-    telefone - 44 84621458
-    
-    Bolacha
-    código interno
-    validade
-Função de busca de registros já gravados
-função de venda baseada nos registros já inseridos
-Função de conta para cada pessoa registrada
 
-->Funções Pretendidas:
 
-Permitir adicionar valores de compra a um cadastro de usuario;
+/--------------------------------------------------------------------------------
 
-Adicionar sistema de login;
+Como Compilar:
+
+/--------------------------------------------------------------------------------
+
+Observações:
+
+/--------------------------------------------------------------------------------
+
 
 
