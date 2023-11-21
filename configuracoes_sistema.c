@@ -1,0 +1,5 @@
+#include <stdio.h>
+
+/*
+ESTE ARQUIVO POSSUI AS FUNÇÕES DE CONFIGURAÇÃO DO SISTEMA
+*/

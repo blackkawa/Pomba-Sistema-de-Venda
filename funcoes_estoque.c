@@ -1,0 +1,5 @@
+#include <stdio.h>
+
+/*
+NESTE ARQUIVO CONSTA AS FUNÇÕES DE ESTOQUE DO PROGRAMA
+*/
